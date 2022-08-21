@@ -1,0 +1,18 @@
+{
+  "name": "zunda-fairy-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "kumamoto <onioni9999nagare@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "serverless": "^3.22.0",
+    "serverless-offline": "^9.2.5",
+    "serverless-python-requirements": "^5.4.0"
+  },
+  "scripts": {
+    "fmt": "poetry run black . && poetry run isort .",
+    "offline": "sls offline start",
+    "build:prd": "sls package -s prd",
+    "deploy:prd": "sls deploy -s prd --verbose"
+  }
+}
