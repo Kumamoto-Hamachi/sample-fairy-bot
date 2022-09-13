@@ -1,0 +1,10 @@
+# AWS
+export AWS_ACCESS_KEY_ID=xxxxx
+export AWS_SECRET_ACCESS_KEY=xxxxx
+
+# Slack
+export SLACK_BOT_TOKEN=xxxxx
+export SLACK_USER_TOKEN=xxxxx
+export SLACK_BOT_USER=xxxxx
+export SLACK_SIGNING_SECRET=xxxxx
+export SLACK_APP_TOKEN=xxxxx
