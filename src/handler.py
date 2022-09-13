@@ -5,7 +5,6 @@ from zoneinfo import ZoneInfo
 
 from slack_bolt import App
 from slack_bolt.adapter.aws_lambda import SlackRequestHandler
-from slack_bolt.adapter.socket_mode import SocketModeHandler
 from slack_sdk.web import WebClient
 
 # from ./constants import ZUNDA_EMOJI
@@ -13,7 +12,7 @@ ZUNDA_EMOJI = "zundamon"
 
 app = App(
     token=os.environ.get("SLACK_BOT_TOKEN"),
-    # signing_secret=os.environ.get("SLACK_SIGNING_SECRET"),
+    signing_secret=os.environ.get("SLACK_SIGNING_SECRET"),
     # process_before_response=True
 )
 bot_user = os.environ.get("SLACK_BOT_USER")
@@ -83,6 +82,6 @@ def register_nanoda(event: dict) -> None:
     logger.info("register_nanoda end")  # debug
 
 
-# ソケットモードにしてアプリ起動
-if __name__ == "__main__":
-    SocketModeHandler(app, os.environ["SLACK_APP_TOKEN"]).start()
+def handler(event, context):
+    slack_handler = SlackRequestHandler(app=app)
+    return slack_handler.handle(event, context)
