@@ -1,5 +1,6 @@
 # ローカル開発関連
 .envrc
+memo.md
 # Distribution / packaging
 .Python
 env/
